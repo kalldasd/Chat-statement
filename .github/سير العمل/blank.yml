@@ -1,0 +1,142 @@
+001	<?xml version="1.0" encoding="utf-8"?> 
+2	<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:dist="http://schemas.android.com/apk/distribution" android:versionCode="25" android:versionName="1.0" android:compileSdkVersion="30" android:compileSdkVersionCodename="11" package="com.voip.voiceat" platformBuildVersionCode="30" platformBuildVersionName="11"> 
+3		<uses-sdk android:minSdkVersion="17" android:targetSdkVersion="30" /> 
+4		<uses-permission android:name="android.permission.DISABLE_KEYGUARD" /> 
+5		<uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" /> 
+6		<uses-permission android:name="android.permission.READ_PHONE_STATE" /> 
+7		<uses-permission android:name="android.permission.INTERNET" /> 
+8		<uses-permission android:name="android.permission.CAMERA" /> 
+9		<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> 
+10		<uses-permission android:name="android.permission.VIBRATE" /> 
+11		<uses-permission android:name="android.permission.WAKE_LOCK" /> 
+12		<uses-permission android:name="android.permission.RECORD_AUDIO" /> 
+13		<uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> 
+14		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+15		<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> 
+16		<uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> 
+17		<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> 
+18		<application android:theme="resourceId:0x7f110008" android:label="Voiceat" android:icon="res/drawable/voiceat.png" android:name="com.voip.voiceat.MyApp" android:windowSoftInputMode="0x30" android:allowBackup="true" android:largeHeap="true" android:supportsRtl="true" android:usesCleartextTraffic="true" android:networkSecurityConfig="res/xml/network_security_config.xml" android:roundIcon="res/drawable/voiceat.png" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:requestLegacyExternalStorage="true"> 
+19			<activity android:name="com.voip.voiceat.PreviewPictureActivity" /> 
+20			<activity android:name="com.voip.voiceat.ProfilePicturesActivity" /> 
+21			<activity android:name="com.voip.voiceat.ViewImageProfileActivity" /> 
+22			<activity android:name="com.voip.voiceat.RoomManage.EditAccountActivity" /> 
+23			<activity android:name="com.voip.voiceat.TermsOfUseActivity" /> 
+24			<activity android:name="com.voip.voiceat.UpdateActivity" android:screenOrientation="portrait" /> 
+25			<activity android:name="com.voip.voiceat.ChangePassActivity" android:screenOrientation="portrait" /> 
+26			<activity android:name="com.voip.voiceat.ChangePasswordActivity" android:screenOrientation="portrait" android:windowSoftInputMode="0x2" /> 
+27			<activity android:name="com.voip.voiceat.EditProfileActivity" android:screenOrientation="portrait" android:windowSoftInputMode="0x2" /> 
+28			<activity android:name="com.voip.voiceat.ProfileActivity" android:screenOrientation="portrait" /> 
+29			<activity android:name="com.voip.voiceat.AboutActivity" android:screenOrientation="portrait" /> 
+30			<activity android:name="com.voip.voiceat.RoomManage.AddAccountActivity" android:screenOrientation="portrait" android:windowSoftInputMode="0x20" /> 
+31			<activity android:name="com.voip.voiceat.RoomManage.RoomManagementActivity" android:screenOrientation="portrait" /> 
+32			<activity android:name="com.voip.voiceat.SettingsActivity" android:screenOrientation="portrait" /> 
+33			<activity android:name="com.voip.voiceat.ChatActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="0x30" /> 
+34			<activity android:name="com.voip.voiceat.MainActivity" android:screenOrientation="portrait" android:configChanges="0x4" android:windowSoftInputMode="0x30"> 
+35				<intent-filter> 
+36					<action android:name="android.intent.action.MAIN" /> 
+37					<category android:name="android.intent.category.LAUNCHER" /> 
+38				</intent-filter> 
+39			</activity> 
+40			<activity android:theme="resourceId:0x7f1101bc" android:name="com.yalantis.ucrop.UCropActivity" android:screenOrientation="portrait" /> 
+41			<provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="com.voip.voiceat.fileprovider" android:grantUriPermissions="true"> 
+42				<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="res/xml/file_paths.xml" /> 
+43			</provider> 
+44			<receiver android:name="com.voip.voiceat.PrivateNotificationPressed" /> 
+45			<receiver android:name="com.voip.voiceat.ServiceBroadcast" /> 
+46			<service android:name="com.voip.voiceat.RoomService" /> 
+47			<service android:name="com.voip.voiceat.socket.SocketService" android:enabled="true" android:exported="false" /> 
+48			<service android:name="com.voip.voiceat.MyFirebaseMessagingService" android:exported="false"> 
+49				<intent-filter> 
+50					<action android:name="com.google.firebase.MESSAGING_EVENT" /> 
+51				</intent-filter> 
+52			</service> 
+53			<service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false" android:directBootAware="true"> 
+54				<meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" /> 
+55				<meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" /> 
+56				<meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" /> 
+57				<meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" /> 
+58				<meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar" /> 
+59				<meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" /> 
+60				<meta-data android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" /> 
+61			</service> 
+62			<service android:name="com.google.firebase.messaging.FirebaseMessagingService" android:exported="false" android:directBootAware="true"> 
+63				<intent-filter android:priority="-500"> 
+64					<action android:name="com.google.firebase.MESSAGING_EVENT" /> 
+65				</intent-filter> 
+66			</service> 
+67			<activity android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity" android:enabled="false" android:exported="false" android:process=":playcore_missing_splits_activity" android:stateNotNeeded="true" android:launchMode="singleInstance" /> 
+68			<activity android:theme="resourceId:0x7f1101f5" android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity" android:enabled="false" android:exported="false" android:stateNotNeeded="true" /> 
+69			<service android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService" android:enabled="false" android:exported="true"> 
+70				<meta-data android:name="com.google.android.play.core.assetpacks.versionCode" android:value="10901" /> 
+71			</service> 
+72			<service android:name="com.google.android.play.core.assetpacks.ExtractionForegroundService" android:enabled="false" android:exported="false" /> 
+73			<provider android:name="com.squareup.picasso.PicassoProvider" android:exported="false" android:authorities="com.voip.voiceat.com.squareup.picasso" /> 
+74			<receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false" /> 
+75			<service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false" /> 
+76			<service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false" /> 
+77			<service android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery" android:exported="false"> 
+78				<meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct" /> 
+79			</service> 
+80			<service android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" /> 
+81			<receiver android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver" android:exported="false" /> 
+82			<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true"> 
+83				<intent-filter> 
+84					<action android:name="com.google.android.c2dm.intent.RECEIVE" /> 
+85				</intent-filter> 
+86			</receiver> 
+87			<provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="com.voip.voiceat.firebaseinitprovider" android:initOrder="100" android:directBootAware="true" /> 
+88			<activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false" /> 
+89			<meta-data android:name="com.google.android.gms.version" android:value="12451000" /> 
+90			<meta-data android:name="com.android.vending.derived.apk.id" android:value="1" /> 
+91		</application> 
+92	</manifest> 
+93	 
+1	{ 
+2	  "package_label": "بيان شات", 
+3	  "package_name": "com.voip.voiceat", 
+4	  "has_java_sources": true, 
+5	  "has_xml_sources": true, 
+6	  "created_at": "2021-10-10T22:19:55.386+0000", 
+7	  "updated_at": "2021-10-10T22:29:57.689+0000", 
+8	  "source_size": 8831612 
+9	} 
+1	{ 
+2	  "package_label": "فويسات", 
+3	  "package_name": "com.voip.voiceat", 
+4	  "has_java_sources": true, 
+5	  "has_xml_sources": true, 
+6	  "created_at": "2021-10-10T22:19:55.386+0000", 
+7	  "updated_at": "2021-10-10T22:29:57.689+0000", 
+8	  "source_size": 8831612 
+9	} 
+
+1	/* 
+2	 * Decompiled with CFR 0.0. 
+3	 *  
+4	 * Could not load the following classes: 
+5	 *  android.app.Notification 
+6	 *  android.os.Binder 
+7	 *  android.os.IBinder 
+8	 *  android.os.IInterface 
+9	 *  android.os.Parcel 
+10	 *  java.lang.Object 
+11	 *  java.lang.String 
+12	 */ 
+13	package b.a.a.a; 
+14	 
+15	import android.app.Notification; 
+16	import android.os.Binder; 
+17	import android.os.IBinder; 
+18	import android.os.IInterface; 
+19	import android.os.Parcel; 
+20	 
+21	public interface a 
+22	extends IInterface { 
+23	    public void N(String var1, int var2, String var3, Notification var4); 
+24	 
+25	    public void q(String var1, int var2, String var3); 
+26	 
+27	} 
+28	 
+29	 
+
