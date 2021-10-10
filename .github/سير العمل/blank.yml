@@ -1,0 +1,91 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          اختبار الصدى ، ونشر مشروعك.
+1	/* 2	 * Decompiled with CFR 0.0. 
+
+3	 *  
+
+4	 * Could not load the following classes: 
+
+5	 *  android.app.Notification 
+
+6	 *  android.os.Binder 
+
+7	 *  android.os.IBinder 
+
+8	 *  android.os.IInterface 
+
+9	 *  android.os.Parcel 
+
+10	 *  java.lang.Object 
+
+11	 *  java.lang.String 
+
+12	 */ 
+
+13	package b.a.a.a; 
+
+14	 
+
+15	import android.app.Notification; 
+
+16	import android.os.Binder; 
+
+17	import android.os.IBinder; 
+
+18	import android.os.IInterface; 
+
+19	import android.os.Parcel; 
+
+20	 
+
+21	public interface a 
+
+22	extends IInterface { 
+
+23	    public void N(String var1, int var2, String var3, Notification var4); 
+
+24	 
+
+25	    public void q(String var1, int var2, String var3); 
+
+26	 
+
+27	} 
+
+28	 
+
+29	 
